@@ -55,6 +55,7 @@
                                     <table class="table-striped table">
                                         <tr>
 
+                                            <th></th>
                                             <th>Name</th>
                                             <th>Category</th>
                                             <th>Price</th>
@@ -63,7 +64,10 @@
                                         </tr>
                                         @foreach ($products as $product)
                                             <tr>
-
+                                                <td>
+                                                    <img src="{{ asset($product->image) }}" alt=""
+                                                        class="img-fluid rounded-corner" style="width: 84px">
+                                                </td>
                                                 <td>{{ $product->name }}
                                                 </td>
                                                 <td>
@@ -75,7 +79,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <div class="d-flex justify-content-center">
+                                                    <div class="d-flex justify-content-left">
                                                         <a href='{{ route('products.edit', $product->id) }}'
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
