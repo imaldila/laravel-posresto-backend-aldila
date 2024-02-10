@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,8 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.dashboard');
     })->name('user');
     Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('categories', CategoryController::class);
 });
 
 Route::get('/register', function () {
